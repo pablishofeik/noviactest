@@ -65,7 +65,7 @@ const agentsData: AgentCard[] = [
       'Resumen de casos'
     ],
     // Imagen de robot estilo IA azul
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop',
+    image: 'Gemini_Generated_Image_7pwi757pwi757pwi.png',
     icon: <ScalesIcon />,
     theme: {
       text: 'text-[#3b82f6]', // Blue
@@ -87,7 +87,7 @@ const agentsData: AgentCard[] = [
       'Consultas de colaboradores'
     ],
     // Imagen de robot estilo IA cyan
-    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=800&auto=format&fit=crop',
+    image: 'Gemini_Generated_Image_a8c7dua8c7dua8c7.png',
     icon: <UsersIcon />,
     theme: {
       text: 'text-[#06b6d4]', // Cyan
@@ -109,7 +109,7 @@ const agentsData: AgentCard[] = [
       'Reportes de rendimiento'
     ],
     // Imagen de robot estilo IA morado
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop',
+    image: 'Gemini_Generated_Image_v8h3j3v8h3j3v8h3.png',
     icon: <ChartIcon />,
     theme: {
       text: 'text-[#a855f7]', // Purple
@@ -128,7 +128,7 @@ interface MidBodySectionProps {
 
 const MidBodySection: FC<MidBodySectionProps> = ({ className = '' }) => {
   return (
-    <section className={`bg-[#020408] text-white py-24 px-6 lg:px-16 ${className}`}>
+    <section className={`bg-[#020408] text-white py-3 px-6 lg:px-3 ${className}`}>
       <div className="container mx-auto max-w-7xl">
         
         {/* === HEADER DE LA SECCIÓN === */}

@@ -8,36 +8,42 @@ interface BottomBodySectionProps {
 
 const BottomBodySection: FC<BottomBodySectionProps> = ({ className = '' }) => {
   return (
-    <section className={`bg-[#020408] py-12 px-6 lg:px-16 ${className}`}>
+    <section className={`bg-[#020408] py-6 px-3 lg:px-16 ${className}`}>
       <div className="container mx-auto max-w-7xl">
         
-        {/* Contenedor principal: Más delgado, bordes sutiles, fondo ultra oscuro */}
+        {/* Contenedor principal */}
         <div className="relative w-full rounded-[24px] border border-[#1e3a8a]/40 bg-[#030712] overflow-hidden flex flex-col lg:flex-row items-center shadow-[0_10px_40px_-10px_rgba(37,99,235,0.2)]">
           
           {/* ================= FONDO DE RED (Constellation/Network) ================= */}
-          <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-            {/* Imagen abstracta de nodos/red tecnológica. Usando mix-blend para que solo el brillo azul sobreviva */}
+          {/* Cambié a opacity-100 para que la red brille al máximo */}
+          <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
+            {/* Nota: Agregué una "/" al inicio del src para que Next.js la lea correctamente desde la carpeta public */}
             <Image 
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop"
+              src="/Gemini_Generated_Image_jgo1fgjgo1fgjgo1.png"
               alt="Network Background"
               fill
               className="object-cover mix-blend-screen"
             />
-            {/* Máscara de gradiente: Oscurece los bordes y el lado de la laptop para que no estorbe */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#030712]/50 via-[#030712]/80 to-[#030712]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent" />
+            {/* NUEVO GRADIENTE PROTECTOR DE TEXTO:
+              Empieza muy oscuro en la izquierda (from-[#030712]), 
+              se difumina en el centro (via-[#030712]/70) 
+              y desaparece en la derecha (to-transparent) dejando la red 100% visible.
+            */}
+            <div className="absolute inset-y-0 left-0 w-full lg:w-3/4 bg-gradient-to-r from-[#030712] via-[#030712]/80 to-transparent" />
+            
+            {/* Gradiente sutil abajo para asentar la base */}
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#030712] to-transparent" />
           </div>
 
-          {/* Luz de acento sutil detrás del texto */}
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-blue-600/5 blur-[120px] pointer-events-none z-0" />
+          {/* Luz de acento sutil azul detrás del texto */}
+          <div className="absolute top-0 left-0 w-1/3 h-full bg-blue-600/10 blur-[100px] pointer-events-none z-0" />
 
           {/* ================= COLUMNA IZQUIERDA: CONTENIDO Y CTA ================= */}
-          {/* Reducción de padding para un banner más esbelto */}
           <div className="relative z-10 w-full lg:w-[55%] p-8 md:p-12 lg:p-14 flex flex-col justify-center text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.1] tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.1] tracking-tight mb-4 drop-shadow-lg">
               Tu próximo gran avance empieza hoy.
             </h2>
-            <p className="text-gray-400 text-sm md:text-base mb-8 max-w-[420px] font-light leading-relaxed">
+            <p className="text-gray-300 text-sm md:text-base mb-8 max-w-[420px] font-light leading-relaxed drop-shadow-md">
               Agenda una demo y descubre cómo los Agentes IA de Novacti pueden transformar tu empresa.
             </p>
             
@@ -52,13 +58,8 @@ const BottomBodySection: FC<BottomBodySectionProps> = ({ className = '' }) => {
           </div>
 
           {/* ================= COLUMNA DERECHA: LAPTOP (PNG TRANSPARENTE) ================= */}
-          {/* Ajuste de altura a 350px para mantener la tarjeta delgada. */}
           <div className="relative z-10 w-full lg:w-[45%] h-[250px] md:h-[300px] lg:h-[350px]">
-            {/* NOTA IMPORTANTE: Aquí estoy usando una imagen PNG con fondo 100% transparente de Wikimedia.
-              Esto es exactamente lo que debes hacer con tu render de "Laptop + Taza".
-              El `object-contain` y `object-right-bottom` asegura que se asiente en la base de la tarjeta.
-            */}
-            
+            {/* Aquí irá tu imagen de la laptop PNG */}
           </div>
 
         </div>

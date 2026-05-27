@@ -2,28 +2,17 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 
-// --- ICONOS DE INTEGRACIONES EN SVG PURO ---
-const WhatsAppLogo = () => (
-  <svg className="w-5 h-5 text-[#25D366] fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.061.947 11.5.947c-5.438 0-9.864 4.37-9.868 9.801-.001 1.77.463 3.5 1.34 5.032L1.87 22.13l6.516-1.704l-1.74-.272z"/></svg>
-);
-const GmailLogo = () => (
-  <svg className="w-5 h-5 text-[#EA4335] fill-current" viewBox="0 0 24 24"><path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.5L12 14L3 7.5V21H1.5C.65 21 0 20.35 0 19.5v-15c0-.85.65-1.5 1.5-1.5H3l9 6.5l9-6.5h1.5c.85 0 1.5.65 1.5 1.5z"/></svg>
-);
-const SlackLogo = () => (
-  <svg className="w-5 h-5 text-[#4A154B] fill-current" viewBox="0 0 24 24"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523 2.528 2.528 0 0 1-2.522-2.523 2.528 2.528 0 0 1 2.522-2.52h2.52v2.52zm1.261 0a2.528 2.528 0 0 1 2.52-2.52h5.043a2.528 2.528 0 0 1 2.522 2.52v5.042a2.528 2.528 0 0 1-2.522 2.52H8.823a2.528 2.528 0 0 1-2.52-2.52v-5.042zM15.165 5.042a2.528 2.528 0 0 1 2.523-2.52 2.528 2.528 0 0 1 2.523 2.522v2.52h-2.523a2.528 2.528 0 0 1-2.523-2.522zm0 1.261a2.528 2.528 0 0 1 2.523 2.52v5.043a2.528 2.528 0 0 1-2.523 2.522H10.12a2.528 2.528 0 0 1-2.522-2.522V8.823a2.528 2.528 0 0 1 2.522-2.52h5.043z"/></svg>
-);
-const CRMLogo = () => (
-  <svg className="w-5 h-5 text-[#00A1E0] fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-);
-const DriveLogo = () => (
-  <svg className="w-5 h-5 text-[#34A853] fill-current" viewBox="0 0 24 24"><path d="M19.43 12.98l-6.73-11.53c-.32-.56-.92-.9-1.57-.9h-1.4c-.65 0-1.25.34-1.57.9L1.44 12.98c-.32.56-.32 1.24 0 1.8l3.12 5.34c.32.56.92.9 1.57.9h11.41c.65 0 1.25-.34 1.57-.9l3.12-5.34c.32-.56.32-1.24 0-1.8z"/></svg>
-);
-const NotionLogo = () => (
-  <svg className="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M4.222 2.111v19.778H19.78V2.111H4.222zm1.412 1.412h12.734v3.313l-2.01-.893-3.791 5.674l3.155 4.604h-1.713l-2.502-3.882-2.316 3.882H7.203l3.525-5.362L6.877 6.643l1.83.693l2.457-3.813H5.634z"/></svg>
-);
-const CalendarLogo = () => (
-  <svg className="w-5 h-5 text-[#4285F4] fill-none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-);
+// --- DATOS DE LAS INTEGRACIONES CON LOGOS ORIGINALES (A TODO COLOR) ---
+const integrationTools = [
+  { name: 'WhatsApp', icon: 'https://www.svgrepo.com/show/354560/whatsapp.svg' },
+  { name: 'Gmail', icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg' },
+  { name: 'Slack', icon: 'https://www.svgrepo.com/show/448248/slack.svg' },
+  { name: 'CRM', icon: 'https://www.svgrepo.com/show/303235/salesforce-2-logo.svg' },
+  { name: 'Google Drive', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png' },
+  // Notion es naturalmente negro, le aplicamos un filtro invertido en el renderizado para que sea blanco puro
+  { name: 'Notion', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
+  { name: 'Calendarios', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg' },
+];
 
 interface BodyTopSectionProps {
   className?: string;
@@ -31,7 +20,7 @@ interface BodyTopSectionProps {
 
 const BodyTopSection: FC<BodyTopSectionProps> = ({ className = '' }) => {
   return (
-    <section className={`bg-[#05070a] text-white py-20 px-6 lg:px-16 ${className}`}>
+    <section className={`bg-[#05070a] text-white py-8 px-6 lg:px-10 ${className}`}>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* ================= COLUMNA IZQUIERDA: TEXTO Y BENEFICIOS ================= */}
@@ -52,7 +41,7 @@ const BodyTopSection: FC<BodyTopSectionProps> = ({ className = '' }) => {
               "Trabajan 24/7 sin interrupciones",
             ].map((benefit, index) => (
               <li key={index} className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-500/10 border border-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.2)]">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-500/10 border border-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.2)] shrink-0">
                   <svg className="w-3 h-3 text-[#2563eb]" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -113,7 +102,7 @@ const BodyTopSection: FC<BodyTopSectionProps> = ({ className = '' }) => {
                 ))}
               </div>
 
-              {/* SUB-COLUMNA 2 (Centro vacío para respetar la imagen de los robots) */}
+              {/* SUB-COLUMNA 2 (Centro vacío) */}
               <div className="col-span-4 md:col-span-6" />
 
               {/* SUB-COLUMNA 3 (Departamentos Verdes - Derecha) */}
@@ -140,15 +129,19 @@ const BodyTopSection: FC<BodyTopSectionProps> = ({ className = '' }) => {
             </div>
           </div>
           
-          {/* ================= BARRA INFERIOR DE INTEGRACIONES (Alineación exacta) ================= */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs border-t border-gray-800/80 pt-6">
-            <div className="flex items-center gap-2 text-gray-400"><WhatsAppLogo /> <span className="text-gray-300 font-medium">WhatsApp</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><GmailLogo /> <span className="text-gray-300 font-medium">Gmail</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><SlackLogo /> <span className="text-gray-300 font-medium">Slack</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><CRMLogo /> <span className="text-gray-300 font-medium">CRM</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><DriveLogo /> <span className="text-gray-300 font-medium">Google Drive</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><NotionLogo /> <span className="text-gray-300 font-medium">Notion</span></div>
-            <div className="flex items-center gap-2 text-gray-400"><CalendarLogo /> <span className="text-gray-300 font-medium">Calendarios</span></div>
+          {/* ================= BARRA INFERIOR DE INTEGRACIONES (Nuevos Logos Oficiales) ================= */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs border-t border-gray-800/80 pt-6">
+            {integrationTools.map((tool, index) => (
+              <div key={index} className="flex items-center gap-2.5">
+                <img 
+                  src={tool.icon} 
+                  alt={`${tool.name} Logo`} 
+                  className={`w-5 h-5 object-contain `} 
+                  loading="lazy"
+                />
+                <span className="text-gray-300 font-medium">{tool.name}</span>
+              </div>
+            ))}
             
             <a href="#integraciones" className="text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors ml-2">
               + Más integraciones

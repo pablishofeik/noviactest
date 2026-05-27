@@ -64,7 +64,7 @@ const Banner: FC = () => {
       </svg>
 
       {/* SECCIÓN PRINCIPAL */}
-      <section className="relative bg-[#020408] text-white pt-24 pb-16 px-6 lg:px-20 overflow-hidden">
+      <section className="relative bg-[#020408] text-white pt-8 pb-16 px-6 lg:px-20 overflow-hidden">
         
         {/* Degradados de fondo */}
         <div className="absolute inset-0 z-0">
